@@ -25,7 +25,6 @@ class DBOperate(object):
         print(self.obj)
         if operate == INSERT:
             res = self._insert(info[2])
-            print(res)
         elif operate == UPDATE:
             res = self._update(info[2])
         elif operate == DELETE:
@@ -34,6 +33,7 @@ class DBOperate(object):
             res = self._query(info[2])
         else:
             res = False
+        print(res)
         if res:
             return True
         return False

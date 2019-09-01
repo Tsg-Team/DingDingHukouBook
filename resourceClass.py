@@ -12,15 +12,31 @@ from DataBase import DBOperate
 
 parser = reqparse.RequestParser()
 parser.add_argument('header', type=str)
+db = DBOperate()
 
 
 class Insert(Resource):
 
     def post(self):
-        db = DBOperate()
         data = request.json
         res = db.do_sql(1, ['run', 'account', data])
         response = make_data(res)
+        return response
+
+
+class Update(Resource):
+
+    def post(self):
+        data = request.json
+        response = make_data(data)
+        return response
+
+
+class Delete(Resource):
+
+    def post(self):
+        data = request.json
+        response = make_data(data)
         return response
 
 
@@ -28,7 +44,8 @@ class Query(Resource):
 
     def post(self):
         data = request.json
-        response = make_data(data)
+        res = db.do_sql(4, ['run', 'account', data])
+        response = make_data(res)
         return response
 
 
