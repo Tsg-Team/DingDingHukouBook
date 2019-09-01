@@ -31,6 +31,8 @@ class DBOperate(object):
             res = self._delete(info[2])
         elif operate == QUERY:
             res = self._query(info[2])
+            if res:
+                return res
         else:
             res = False
         print(res)
