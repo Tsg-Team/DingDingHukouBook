@@ -31,7 +31,7 @@ class Borrow(Resource):
     def post(self):
         data = request.json
         operate = data['operate']
-        res = db.do_sql(operate, ['run', 'account', data])
+        res = db.do_sql(operate, ['run', 'borrow', data])
         response = make_data(res)
         return response
 
