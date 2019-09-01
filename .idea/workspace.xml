@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="11809367-cd46-43ae-84b0-270f95186083" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../../../crawler/jobbole_crawler/jobbole_crawler" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resourceClass.py" beforeDir="false" afterPath="$PROJECT_DIR$/resourceClass.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/structure.json" beforeDir="false" afterPath="$PROJECT_DIR$/structure.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../tools/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../tools/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../../summury/machineLearning/summary.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../summury/machineLearning/summary.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../../summury/machineLearning/笔记.txt" beforeDir="false" />
@@ -36,8 +34,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resourceClass.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="268">
-              <caret line="22" column="27" lean-forward="true" selection-start-line="22" selection-start-column="27" selection-end-line="22" selection-end-column="27" />
+            <state relative-caret-position="243">
+              <caret line="21" column="38" selection-start-line="21" selection-start-column="38" selection-end-line="21" selection-end-column="38" />
               <folding>
                 <element signature="e#116#165#0" expanded="true" />
               </folding>
@@ -179,12 +177,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1567265348664</updated>
-      <workItem from="1567265349811" duration="11807000" />
+      <workItem from="1567265349811" duration="11900000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11807000" />
+    <option name="totallyTimeSpent" value="11900000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -282,8 +280,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resourceClass.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="268">
-          <caret line="22" column="27" lean-forward="true" selection-start-line="22" selection-start-column="27" selection-end-line="22" selection-end-column="27" />
+        <state relative-caret-position="243">
+          <caret line="21" column="38" selection-start-line="21" selection-start-column="38" selection-end-line="21" selection-end-column="38" />
           <folding>
             <element signature="e#116#165#0" expanded="true" />
           </folding>

@@ -19,7 +19,7 @@ class Account(Resource):
 
     def post(self):
         data = request.json
-        operate = data['operate']
+        operate = int(data['operate'])
         del data['operate']
         res = db.do_sql(operate, ['run', 'account', data])
         response = make_data(res)
