@@ -74,7 +74,7 @@ class DBOperate(object):
         return res
 
     def _query(self, data):
-        res = self.obj.find(data)
+        res = self.obj.find(data, {'_id': 0})
         return res
 
 
