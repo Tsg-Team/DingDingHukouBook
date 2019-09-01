@@ -11,35 +11,24 @@ from DataBase import DBOperate
 from BaseResource import BaseResource
 
 
-class Insert(BaseResource):
+
+class Account(BaseResource):
 
     def post(self):
         data = request.json
-        res = self.db.do_sql(1, ['run', 'account', data])
+        operate = int(data['operate'])
+        del data['operate']
+        res = self.db.do_sql(operate, ['run', 'account', data])
         response = self.make_data(res)
         return response
 
 
-class Update(BaseResource):
+class Borrow(BaseResource):
 
     def post(self):
         data = request.json
-        response = self.make_data(data)
-        return response
-
-
-class Delete(BaseResource):
-
-    def post(self):
-        data = request.json
-        response = self.make_data(data)
-        return response
-
-
-class Query(BaseResource):
-
-    def post(self):
-        data = request.json
-        res = self.db.do_sql(4, ['run', 'account', data])
+        operate = data['operate']
+        res = self.db.do_sql(operate, ['run', 'borrow', data])
         response = self.make_data(res)
         return response
+
