@@ -32,7 +32,7 @@ class DBOperate(object):
         elif operate == QUERY:
             res = self._query(info[2])
             if res:
-                return res
+                return [x for x in res]
         else:
             res = False
         print(res)
