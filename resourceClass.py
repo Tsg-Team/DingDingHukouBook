@@ -52,7 +52,8 @@ class Query(Resource):
 def make_data(data):
     data = {
         'data': data,
-        'msg': 'success'
+        'msg': 'success',
+        'status': ''
     }
     response = make_response(jsonify(data))
     response.headers['Access-Control-Allow-Origin'] = '*'
