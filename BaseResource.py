@@ -23,5 +23,6 @@ class BaseResource(Resource):
         }
         response = make_response(jsonify(resData))
         response.headers['Access-Control-Allow-Origin'] = '*'
+        response.headers['Access-Control-Allow-Credentials'] = "true"
         return response
 
