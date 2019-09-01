@@ -1,10 +1,10 @@
 {
     "account": {
-        "number": "primary key 号码",
-        "name": "str 名称",
-        "borrow": "1|0 借阅 1 已借出， 0 在库",
+        "bookNum": "primary key 号码",
+        "bookName": "str 名称",
+        "borrowStatus": "1|0 借阅 1 已借出， 0 在库",
         "status": "正常|破损|其他 保存状态",
-        "remarks": "str 备注",
+        "bookRemark": "str 备注",
         "creator": "创建者",
         "createtime": "创建时间",
         "updater": "修改者",
