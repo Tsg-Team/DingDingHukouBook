@@ -21,5 +21,6 @@
         "updater": "修改者",
         "updatetime": "修改时间",
         "rstatus": "五大金刚状态"
-    }
+    },
+    "operate": "INSERT, UPDATE, DELETE, QUERY = 1, 2, 3, 4"
 }

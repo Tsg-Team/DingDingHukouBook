@@ -15,36 +15,23 @@ parser.add_argument('header', type=str)
 db = DBOperate()
 
 
-class Insert(Resource):
+class Account(Resource):
 
     def post(self):
         data = request.json
-        res = db.do_sql(1, ['run', 'account', data])
+        operate = data['operate']
+        del data['operate']
+        res = db.do_sql(operate, ['run', 'account', data])
         response = make_data(res)
         return response
 
 
-class Update(Resource):
+class Borrow(Resource):
 
     def post(self):
         data = request.json
-        response = make_data(data)
-        return response
-
-
-class Delete(Resource):
-
-    def post(self):
-        data = request.json
-        response = make_data(data)
-        return response
-
-
-class Query(Resource):
-
-    def post(self):
-        data = request.json
-        res = db.do_sql(4, ['run', 'account', data])
+        operate = data['operate']
+        res = db.do_sql(operate, ['run', 'account', data])
         response = make_data(res)
         return response
 
@@ -57,4 +44,5 @@ def make_data(data):
     }
     response = make_response(jsonify(data))
     response.headers['Access-Control-Allow-Origin'] = '*'
+    response.headers['Access-Control-Allow-Credentials'] = "true"
     return response
