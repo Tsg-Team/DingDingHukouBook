@@ -5,11 +5,9 @@
 # software-version: python 3.6
 
 
-from flask import make_response, jsonify, request
-from flask_restful import Resource, reqparse
-from DataBase import DBOperate
-from BaseResource import BaseResource
+from flask import request
 
+from app.resources.BaseResource import BaseResource
 
 
 class Account(BaseResource):

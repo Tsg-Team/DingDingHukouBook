@@ -5,9 +5,10 @@
 # software-version: python 3.6
 
 
-from flask import make_response, jsonify, request
+from flask import make_response, jsonify
 from flask_restful import Resource, reqparse
-from DataBase import DBOperate
+
+from app.db.DataBase import DBOperate
 
 
 class BaseResource(Resource):

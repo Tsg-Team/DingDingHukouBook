@@ -5,11 +5,12 @@
 # software-version: python 3.6
 
 
-from flask import make_response, jsonify, request
-from flask_restful import Resource, reqparse
-import dingtalk.api
+from flask import request
+from flask_restful import reqparse
+
 import appConfig
-from BaseResource import BaseResource
+import dingtalk.api
+from app.resources.BaseResource import BaseResource
 
 parser = reqparse.RequestParser()
 parser.add_argument('header', type=str)
@@ -25,6 +26,7 @@ class Login(BaseResource):
 
 
 def getAssessToken():
+
     request = dingtalk.api.OapiGettokenRequest("https://oapi.dingtalk.com/gettoken")
     request.appkey = appConfig.get('appKey')
     request.appsecret = appConfig.get('appSecret')

@@ -7,8 +7,9 @@
 
 from flask import Flask
 from flask_restful import Api
-from resourceClass import Account, Borrow
-from loginResource import Login
+
+from app.resources.loginResource import Login
+from app.resources.resourceClass import Account, Borrow
 
 app = Flask(__name__)
 api = Api(app)

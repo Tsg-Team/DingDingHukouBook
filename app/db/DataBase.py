@@ -6,9 +6,7 @@
 
 
 import pymongo
-
-
-INSERT, UPDATE, DELETE, QUERY = 1, 2, 3, 4
+from app.resources.appConfig import *
 
 
 class DBOperate(object):
