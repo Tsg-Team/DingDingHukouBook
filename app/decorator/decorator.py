@@ -5,19 +5,43 @@
 # software-version: python 3.6
 
 
-class Lock(object):
-    # 锁住当前流程
+import time
+import threading
+
+
+class CallableObject(object):
+
+    # flask路由注册不能有同名函数，所以利用可调用对象来作为装饰器
+    # 且修改对应对象的__name__字段，以避免函数或对象重名
+    def __init__(self, func):
+        self.func = func
+        time.sleep(0.001)
+        self.__name__ = str(time.time()).replace('.', '')
+
     def __call__(self, *args, **kwargs):
+        return self.func(*args, **kwargs)
+
+
+class Lock(object):
+
+    def __init__(self, *args, **kwargs):
+        pass
+
+    # 锁住当前流程
+    def __call__(self, func, *args, **kwargs):
 
         def realfunc(*args, **kwargs):
+            # code
+            lock = threading.Lock()
+            lock.acquire()
             try:
-                self._func(*args, **kwargs)
+                res = func(*args, **kwargs)
             except Exception as e:
                 error = '[出现错误： %s]' % e
                 print error
-                return error
-        return realfunc
-
-    def __init__(self, func):
-        self._func = func
+                res = error
+            finally:
+                lock.release()
+            return res
+        return CallableObject(realfunc)
 

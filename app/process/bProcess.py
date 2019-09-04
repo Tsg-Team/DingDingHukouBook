@@ -7,14 +7,27 @@
 
 from app.db.DataBase import DBOperate
 from app.decorator.decorator import Lock
+import threading
 
 
-@Lock
+lock = threading.Lock()
+
+
+# @Lock
 def borrow_account():
     # 借阅户口本流程
+
+    # lock.acquire()
     db = DBOperate()
+    # lock.release()
+    res = db.do_sql(4, ['run', 'account', {'bookStatus': 'error'}])
+    print res
+    return res
 
-    return
 
-
+if __name__ == '__main__':
+    b1 = borrow_account()
+    b2 = borrow_account()
+    print b1
+    print b2
 
