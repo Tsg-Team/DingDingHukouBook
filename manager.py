@@ -6,16 +6,20 @@
 
 
 from flask import Flask
-from flask_restful import Api
+from flask_restful import Api, reqparse
 
 from app.resources.loginResource import Login
+from app.resources.AccountResource import AccountQuery, AccountRegister
 from app.resources.resourceClass import Account, Borrow
-
 
 app = Flask(__name__)
 api = Api(app)
 
-api.add_resource(Account, '/account')
+parser = reqparse.RequestParser()
+parser.add_argument('header', type=str)
+
+api.add_resource(AccountQuery, '/account/<string:accountId>')
+api.add_resource(AccountRegister, '/account')
 api.add_resource(Borrow, '/borrow')
 api.add_resource(Login, '/login')
 
