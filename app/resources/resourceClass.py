@@ -8,6 +8,7 @@
 from flask import request
 
 from app.resources.BaseResource import BaseResource
+from app.process.bProcess import borrow_account
 
 
 class Account(BaseResource):
@@ -26,7 +27,7 @@ class Borrow(BaseResource):
     def post(self):
         data = request.json
         operate = data['operate']
-        res = self.db.do_sql(operate, ['run', 'borrow', data])
+        res = borrow_account(operate, ['run', 'borrow',  data])
         response = self.make_data(res)
         return response
 

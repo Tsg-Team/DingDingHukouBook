@@ -24,18 +24,18 @@ class CallableObject(object):
 
 class Lock(object):
 
-    def __init__(self, *args, **kwargs):
-        pass
+    def __init__(self, func, *args, **kwargs):
+        self.func = func
 
     # 锁住当前流程
-    def __call__(self, func, *args, **kwargs):
+    def __call__(self, *args, **kwargs):
 
         def realfunc(*args, **kwargs):
             # code
             lock = threading.Lock()
             lock.acquire()
             try:
-                res = func(*args, **kwargs)
+                res = self.func(*args, **kwargs)
             except Exception as e:
                 error = '[出现错误： %s]' % e
                 print error
@@ -43,5 +43,5 @@ class Lock(object):
             finally:
                 lock.release()
             return res
-        return CallableObject(realfunc)
+        return realfunc()
 

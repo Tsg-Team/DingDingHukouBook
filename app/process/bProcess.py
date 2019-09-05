@@ -5,29 +5,27 @@
 # software-version: python 3.6
 
 
+import datetime
+
 from app.db.DataBase import DBOperate
 from app.decorator.decorator import Lock
-import threading
 
 
-lock = threading.Lock()
-
-
-# @Lock
-def borrow_account():
+@Lock
+def borrow_account(operate=4, data=['run', 'borrow', {'test': 'test'}]):
     # 借阅户口本流程
 
-    # lock.acquire()
+    print 'Start time: %s' % datetime.datetime.now()
+    # time.sleep(1)
     db = DBOperate()
-    # lock.release()
-    res = db.do_sql(4, ['run', 'account', {'bookStatus': 'error'}])
-    print res
+    # res = db.do_sql(4, ['run', 'account', {'bookStatus': '正常'}])
+    res = db.do_sql(operate, data)
+    print 'End time: %s' % datetime.datetime.now()
     return res
 
 
 if __name__ == '__main__':
-    b1 = borrow_account()
-    b2 = borrow_account()
+    b1, b2 = [borrow_account(), borrow_account()]
     print b1
     print b2
 

@@ -11,6 +11,7 @@ from flask_restful import Api
 from app.resources.loginResource import Login
 from app.resources.resourceClass import Account, Borrow
 
+
 app = Flask(__name__)
 api = Api(app)
 

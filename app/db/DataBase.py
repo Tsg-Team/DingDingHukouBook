@@ -12,7 +12,7 @@ from app.resources.appConfig import *
 class DBOperate(object):
 
     def __init__(self):
-        self.db = pymongo.MongoClient('mongodb://localhost:27017/')
+        self.db = pymongo.MongoClient('mongodb://119.29.187.65:27017/')
 
     def do_sql(self, operate, info):
         # info: {db, table, data}
@@ -78,4 +78,4 @@ class DBOperate(object):
 
 if __name__ == '__main__':
     db = DBOperate()
-    db.do_sql(1, [{'test': 'text'}])
+    db.do_sql(1, ['run', 'account', {'test': 'text'}])
