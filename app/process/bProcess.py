@@ -12,9 +12,10 @@ from app.decorator.decorator import Lock
 
 
 @Lock
-def borrow_account(operate=4, data=['run', 'borrow', {'test': 'test'}]):
+def borrow_account(operate=4, data=None):
     # 借阅户口本流程
-
+    if not data:
+        data = ['run', 'borrow', {'test': 'test'}]
     print 'Start time: %s' % datetime.datetime.now()
     # time.sleep(1)
     db = DBOperate()
