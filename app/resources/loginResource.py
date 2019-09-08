@@ -22,7 +22,7 @@ class Login(BaseResource):
         requestData = request.json
         token = getAssessToken()
         userInfo = getUseInfo(token, requestData['authCode'])
-        return self.make_data(userInfo)
+        return self.make_data(userInfo, '登陆成功', 'success')
 
 
 def getAssessToken():
