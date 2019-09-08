@@ -32,7 +32,10 @@ class Borrow(BaseResource):
                 result["error"] = error
             finally:
                 lock.release()
-                return self.make_data({}, result["error"], 'success')
+                if(result["error"]):
+                    return self.make_data({}, result["error"], 'success')
+                else:
+                    return self.make_data({}, '申请成功', 'success')
         else:
             return self.make_data({}, '他人正在借请稍后重试', 'faild')
 
