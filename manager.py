@@ -8,9 +8,9 @@
 from flask import Flask
 from flask_restful import Api, reqparse
 
+from app.resources.BorrowResource import Borrow
 from app.resources.loginResource import Login
 from app.resources.AccountResource import AccountRegister, AccountByUser, AccountByBookNum
-from app.resources.resourceClass import Borrow
 
 app = Flask(__name__)
 api = Api(app)
@@ -21,7 +21,7 @@ parser.add_argument('header', type=str)
 api.add_resource(AccountByUser, '/accountByUser')
 api.add_resource(AccountByBookNum, '/account/<string:bookNum>')
 api.add_resource(AccountRegister, '/account')
-api.add_resource(Borrow, '/borrow')
+api.add_resource(Borrow, '/account/borrow')
 api.add_resource(Login, '/login')
 
 if __name__ == '__main__':

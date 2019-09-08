@@ -22,12 +22,4 @@ class Account(BaseResource):
         return response
 
 
-class Borrow(BaseResource):
-
-    def post(self):
-        data = request.json
-        operate = data['operate']
-        res = borrow_account(operate, ['run', 'borrow',  data])
-        response = self.make_data(res)
-        return response
 

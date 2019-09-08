@@ -1,3 +1,4 @@
+# coding=utf-8
 from mongoengine import *
 
 connect('run', host='119.29.187.65', port=27017)
@@ -16,4 +17,11 @@ class Account(Document):
     department = StringField()
     status = StringField()
     bookRemark = StringField()
+    cborrower = StringField(default="无")
+    cphone = StringField(default="无")
+    creason = StringField(default="无")
+    nborrower = StringField(default="无")
+    nphone = StringField(default="无")
+    napartment = StringField(default="无")
+    nreason = StringField(default="无")
     staffs = ListField(EmbeddedDocumentField('Staff'))
