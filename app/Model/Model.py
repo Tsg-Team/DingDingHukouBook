@@ -3,6 +3,7 @@ from mongoengine import *
 
 connect('run', host='119.29.187.65', port=27017)
 
+
 class Staff(EmbeddedDocument):
     userId = StringField()
     name = StringField()
